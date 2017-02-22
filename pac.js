@@ -1,10 +1,15 @@
 $(document).ready(function(){
-	$('ul li').click(function(){
-		$('li').removeClass('foradd');
-		$(this).addClass('foradd');
+	$('form').submit(function (evt){
+		evt.preventDefault();
+
+		let $searchfield = $('#animal-search');
+		let $button = $('#serch-button');
+		
+		$searchfield.prop('disabled',true);
+		$button.attr('disabled',true).val('searching......');
 
 		let flickrapi = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
-		let animal = $(this).text();
+		let animal = $searchfield.val();
 		let flickroption = {
 			tags : animal,
 			format: "json"
@@ -18,6 +23,9 @@ $(document).ready(function(){
 			})
 			html+= '</ul>';
 			$('.photo').html(html);
+
+			$searchfield.prop('disabled',false);
+			$button.attr('disabled',false).val('search');
 		}
 		$.getJSON(flickrapi, flickroption, displayphoto);
 	})

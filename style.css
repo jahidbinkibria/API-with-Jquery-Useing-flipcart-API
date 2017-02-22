@@ -13,6 +13,9 @@ li{
 	font-family: 'Sansita', sans-serif;
 	box-sizing: border-box;
 }
+img{
+	max-width: 100%;
+}
 
 h1{
 	color: purple;
@@ -32,25 +35,20 @@ h1{
 	color: red;
 	padding: 15px 0;
 }
-.photo_list ul li{
-	list-style: none;
-	display: inline-block;
-	font-size: 40px;
-	padding: 0 80px;
-	background: #eae5ea;
-	cursor: pointer;
-}
-.photo_list ul li:hover{
-	background: #ccc;
-	color: #fff;
-}
+
 .foradd{
 	background: #ccc !important;
 }
-/*#*/
-.photo li{
-	
+#animal-search{
+	padding: 10px 50px 10px 5px;
+	border: 2px solid blueviolet;
+	border-radius: 20px;
 }
-img{
-	max-width: 100%;
+#animal-search:focus{
+	outline: 0;
+}
+.photo li{
+	height: 250px;
+    overflow: hidden;
+    margin: 25px 0;
 }
